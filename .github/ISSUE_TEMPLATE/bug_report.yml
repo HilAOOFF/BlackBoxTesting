@@ -71,10 +71,10 @@ body:
     attributes:
       label: Приоритет
       description: Скорость, с которой дефект должен быть исправлен.
-    options:
-      - Low (Низкий)
-      - Medium (Средний)
-      - High (Высокий)
+      options:
+        - Low (Низкий)
+        - Medium (Средний)
+        - High (Высокий)
     validations:
       required: true
 
@@ -83,12 +83,12 @@ body:
     attributes:
       label: Серьезность
       description: Степень влияния дефекта на работоспособность приложения.
-    options:
-      - Trivial (Тривиальная)
-      - Minor (Незначительная)
-      - Major (Значительная)
-      - Critical (Критическая)
-      - Blocker (Блокирующая)
+      options:
+        - Trivial (Тривиальная)
+        - Minor (Незначительная)
+        - Major (Значительная)
+        - Critical (Критическая)
+        - Blocker (Блокирующая)
     validations:
       required: true
 
