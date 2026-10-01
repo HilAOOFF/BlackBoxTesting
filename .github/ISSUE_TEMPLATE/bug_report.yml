@@ -1,0 +1,102 @@
+name: Отчет о дефекте
+description: Создать отчет о найденной ошибке в приложении
+title: "[Ошибка]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Спасибо за вклад в тестирование проекта! 
+        Пожалуйста, заполните форму ниже, чтобы мы могли быстрее исправить баг.
+
+  - type: checkboxes
+    id: duplicate_check
+    attributes:
+      label: Проверка дубликатов
+      description: Убедитесь, что такой баг еще не был зарегистрирован.
+      options:
+        - label: Я ознакомился с уже существующими отчетами о дефектах и подтверждаю, что этот баг уникален.
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      description: Кратко опишите суть дефекта.
+      placeholder: Например, приложение аварийно завершает работу при нажатии на кнопку...
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Предусловия
+      description: Укажите состояние системы или настройки, необходимые для воспроизведения.
+      placeholder: Пользователь должен быть авторизован...
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+      description: Пошагово опишите, как вызвать ошибку.
+      placeholder: |
+        1. Открыть приложение.
+        2. Перейти во вкладку...
+        3. Нажать кнопку...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_result
+    attributes:
+      label: Ожидаемый результат
+      description: Что должно было произойти при правильной работе?
+      placeholder: Данные успешно сохраняются.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_result
+    attributes:
+      label: Фактический результат
+      description: Что произошло на самом деле?
+      placeholder: Появляется ошибка 500.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Приоритет
+      description: Скорость, с которой дефект должен быть исправлен.
+    options:
+      - Low (Низкий)
+      - Medium (Средний)
+      - High (Высокий)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Серьезность
+      description: Степень влияния дефекта на работоспособность приложения.
+    options:
+      - Trivial (Тривиальная)
+      - Minor (Незначительная)
+      - Major (Значительная)
+      - Critical (Критическая)
+      - Blocker (Блокирующая)
+    validations:
+      required: true
+
+  - type: textarea
+    id: visual_materials
+    attributes:
+      label: Скриншоты / Доп. материалы
+      description: Перетащите сюда скриншоты или логи, если они есть.
+      placeholder: Ссылки или изображения...
+    validations:
+      required: false
